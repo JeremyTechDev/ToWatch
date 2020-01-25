@@ -32,7 +32,7 @@ export function fetchTVShows() {
     });
 }
 
-function getShowDetails(showId) {
+export function getShowDetails(showId) {
   const endpoint = window.encodeURI(
     `https://www.episodate.com/api/show-details?q=${showId}`
   );
