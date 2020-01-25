@@ -24,7 +24,6 @@ export default class Popular extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Header />
         <div className="content">
           <h1 className="title">Most popular tv shows</h1>
 
