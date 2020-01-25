@@ -25,11 +25,22 @@ export function getShowDetails(showId) {
   return fetch(endpoint)
     .then(res => res.json())
     .then(data => {
-
       //convert to date to a more friendly format
       data.tvShow.start_date = convertDate(data.tvShow.start_date);
 
       return data.tvShow;
+    });
+}
+
+export function handleSearch(q) {
+  const endpoint = window.encodeURI(
+    `https://www.episodate.com/api/search?q=${q}&page=1`
+  );
+
+  return fetch(endpoint)
+    .then(res => res.json())
+    .then(data => {
+      return data.tv_shows;
     });
 }
 
