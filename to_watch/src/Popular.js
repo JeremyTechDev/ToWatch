@@ -1,6 +1,5 @@
 import React from "react";
 import { fetchTVShows } from "./api";
-import Header from "./Header";
 import { Link } from "react-router-dom";
 import "./SASS/popular.scss";
 
