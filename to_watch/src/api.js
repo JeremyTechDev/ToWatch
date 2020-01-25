@@ -7,24 +7,9 @@ export function fetchTVShows() {
   return fetch(endpoint)
     .then(res => res.json())
     .then(data => {
-      const months = [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec"
-      ];
-      
       for (let i in data.tv_shows) {
         getShowDetails(data.tv_shows[i].id).then(tvShow => {
-          data.tv_shows[i].details = tvShow
+          data.tv_shows[i].details = tvShow;
         });
       }
 
@@ -40,17 +25,31 @@ export function getShowDetails(showId) {
   return fetch(endpoint)
     .then(res => res.json())
     .then(data => {
-      return data.tvShow
+
+      //convert to date to a more friendly format
+      data.tvShow.start_date = convertDate(data.tvShow.start_date);
+
+      return data.tvShow;
     });
 }
 
-/*
-//converts the YYYY-MM-DD date format to MM YYYY format
-      for (let i in data.tv_shows) {
-        let date = data.tv_shows[i].start_date;
-        date = new Date(date);
-        data.tv_shows[i].start_date =
-          months[date.getMonth()] + " " + date.getFullYear();
-        return data.tv_shows;
-      }
-*/
+//Convert date to format MM YYYY like Jan 2020
+function convertDate(date) {
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ];
+  date = new Date(date);
+  date = months[date.getMonth()] + " " + date.getFullYear();
+  return date;
+}
