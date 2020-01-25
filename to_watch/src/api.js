@@ -26,7 +26,8 @@ export function fetchTVShows(page = 1) {
       for (let i in data.tv_shows) {
         let date = data.tv_shows[i].start_date;
         date = new Date(date);
-        date = months[date.getMonth()] + " " + date.getFullYear();
+        data.tv_shows[i].start_date =
+          months[date.getMonth()] + " " + date.getFullYear();
       }
 
       return data.tv_shows;

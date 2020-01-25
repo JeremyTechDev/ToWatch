@@ -1,5 +1,6 @@
 import React from "react";
 import { fetchTVShows } from "./api";
+import "./SASS/popular.scss";
 
 export default class Popular extends React.Component {
   constructor(props) {
@@ -20,25 +21,25 @@ export default class Popular extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
-        {this.state.tvShows.map(show => {
+      <div className="tvShows">
+        {this.state.tvShows.map(tvShow => {
           return (
-            <div key={show.id} className="tvShow-container">
+            <div key={tvShow.id} className="tvShow-container">
               <div className="tvShow-img">
-                <img alt={show.name} src={show.image_thumbnail_path} />
-                {show.network}
+                <img alt={tvShow.name} src={tvShow.image_thumbnail_path} />
               </div>
               <div className="tvShow-info">
-                <h4>{show.country}</h4>
-                <h4>{show.status}</h4>
-                <h2>{show.name}</h2>
-                <h3>Started on {show.start_date}</h3>
-                {show.end_date && <h3>Ended on {show.end_date}</h3>}
+                <h1>{tvShow.name}</h1>
+                <h5>
+                  Since {tvShow.start_date}
+                  <span>by {tvShow.network}</span>
+                </h5>
+                <h4>{tvShow.country}</h4>
               </div>
             </div>
           );
         })}
-      </React.Fragment>
+      </div>
     );
   }
 }
