@@ -25,7 +25,7 @@ export default class Popular extends React.Component {
       <React.Fragment>
         <Header />
         <div className="content">
-            <h1 className="title">Most popular tv shows</h1>
+          <h1 className="title">Most popular tv shows</h1>
 
           <div className="tvShows">
             {this.state.tvShows.map(tvShow => {
@@ -38,7 +38,7 @@ export default class Popular extends React.Component {
                     <h1>{tvShow.name}</h1>
                     <h5>
                       Since {tvShow.start_date}
-                      <span>by {tvShow.network}</span>
+                      <span>by {tvShow.country}</span>
                     </h5>
                   </div>
                 </div>

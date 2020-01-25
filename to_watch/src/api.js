@@ -24,7 +24,7 @@ export function fetchTVShows() {
       
       for (let i in data.tv_shows) {
         getShowDetails(data.tv_shows[i].id).then(tvShow => {
-          data.tv_shows[i] = tvShow
+          data.tv_shows[i].details = tvShow
         });
       }
 
@@ -32,7 +32,7 @@ export function fetchTVShows() {
     });
 }
 
-export function getShowDetails(showId) {
+function getShowDetails(showId) {
   const endpoint = window.encodeURI(
     `https://www.episodate.com/api/show-details?q=${showId}`
   );
