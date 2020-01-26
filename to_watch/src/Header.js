@@ -6,16 +6,11 @@ export default class Header extends React.Component {
     super(props);
 
     this.state = {
-      searchBar: ""
+      searchBar: "",
+      results: []
     };
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleSubmit() {
-    //API
-    alert(this.state.searchBar)
   }
 
   //Saves avery change of the search-bar on the state
@@ -34,18 +29,21 @@ export default class Header extends React.Component {
           </div>
 
           <div className="search-bar">
-            <form onSubmit={this.handleSubmit}>
-              <input
-                type="text"
-                className="bar"
-                onChange={this.handleChange}
-                value={this.state.searchBar}
-                placeholder="Find me..."
-              />
-              <button title="Search" type="submit" className="bar-btn">
-                <i class="fas fa-search" />
-              </button>
-            </form>
+            <input
+              type="text"
+              className="bar"
+              onChange={this.handleChange}
+              value={this.state.searchBar}
+              placeholder="Find me..."
+            />
+            <button
+              title="Search"
+              type="button"
+              onClick={() => this.props.handleSubmit(this.state.searchBar)}
+              className="bar-btn"
+            >
+              <i class="fas fa-search" />
+            </button>
           </div>
 
           <nav>

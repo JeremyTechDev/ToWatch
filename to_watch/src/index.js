@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Header from "./Header";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./SASS/index.scss";
 
@@ -12,7 +11,6 @@ export default class App extends React.Component {
     return (
       <Router>
         <React.Fragment>
-          <Header />
           <React.Suspense fallback={<h1>Loading...</h1>}>
             <Switch>
               <Route exact path="/" component={Popular} />
