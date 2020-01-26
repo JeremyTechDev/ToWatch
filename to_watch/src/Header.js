@@ -45,17 +45,6 @@ export default class Header extends React.Component {
               <i class="fas fa-search" />
             </button>
           </div>
-
-          <nav>
-            <ul className="nav-links">
-              <li>
-                <ul>Popular</ul>
-              </li>
-              <li>
-                <ul>fgsd</ul>
-              </li>
-            </ul>
-          </nav>
         </div>
       </React.Fragment>
     );
