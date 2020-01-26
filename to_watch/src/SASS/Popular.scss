@@ -5,7 +5,6 @@
     margin: 70px auto 0;
 }
 .title {
-    font-size: 50px;
     text-transform: uppercase;
     font-family: $title;
 }
@@ -16,7 +15,7 @@
 }
 .tvShow-container {
   background-color: $black;
-  width: 280px;
+  width: 220px;
   border-radius: 15px;
   margin: 60px 20px 20px;
   padding: 7px;
@@ -33,7 +32,7 @@
   margin: 0 auto;
   text-align: center;
   img {
-    width: 210px;
+    width: 160px;
     border-radius: 10px;
     margin-top: -50px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
@@ -41,17 +40,13 @@
 }
 .tvShow-info {
   padding-top: 10px;
-  h1 {
+  text-align: center;
+  h3 {
     color: $red;
-    text-align: center;
     font-family: $title;
     line-height: 30px;
-    margin-bottom: 10px;
   }
   h5 {
       font-weight: 500;
-    span {
-      float: right;
-    }
   }
 }

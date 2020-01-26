@@ -7,7 +7,7 @@ export default class TvShowsGrid extends React.Component {
     return (
       <React.Fragment>
         <div className="content">
-          <h1 className="title">{this.props.title}</h1>
+          <h2 className="title">{this.props.title}</h2>
 
           <div className="tvShows">
             {this.props.tvShows.map(tvShow => {
@@ -27,11 +27,8 @@ export default class TvShowsGrid extends React.Component {
                       />
                     </div>
                     <div className="tvShow-info">
-                      <h1>{tvShow.name}</h1>
-                      <h5>
-                        Since {tvShow.start_date}
-                        <span>by {tvShow.country}</span>
-                      </h5>
+                      <h3>{tvShow.name}</h3>
+                      <h5>by {tvShow.network}</h5>
                     </div>
                   </div>
                 </Link>
