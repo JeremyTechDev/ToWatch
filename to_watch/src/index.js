@@ -11,7 +11,7 @@ export default class App extends React.Component {
     return (
       <Router>
         <React.Fragment>
-          <React.Suspense fallback={<h1>Loading...</h1>}>
+          <React.Suspense fallback={<h1>Loading</h1>}>
             <Switch>
               <Route exact path="/" component={Popular} />
               <Route exact path="/tvshow" component={TvShow} />

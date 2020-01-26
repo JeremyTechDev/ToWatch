@@ -2,7 +2,6 @@ import React from "react";
 import { fetchTVShows } from "./api";
 import TvShowsGrid from "./TvShowsGrid";
 import Search from "./Search";
-import Loading from "./Loading";
 import "./SASS/popular.scss";
 
 export default class Popular extends React.Component {
@@ -10,7 +9,7 @@ export default class Popular extends React.Component {
     super(props);
 
     this.state = {
-      tvShows: null
+      tvShows: []
     };
   }
 
@@ -26,12 +25,10 @@ export default class Popular extends React.Component {
     return (
       <React.Fragment>
         <Search />
-        {this.state.tvShows && (
-          <TvShowsGrid
-            tvShows={this.state.tvShows}
-            title="Most popular Tv Shows"
-          />
-        ) || <Loading />}
+        <TvShowsGrid
+          tvShows={this.state.tvShows}
+          title="Most popular Tv Shows"
+        />
       </React.Fragment>
     );
   }

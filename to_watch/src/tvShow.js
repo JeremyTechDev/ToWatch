@@ -34,10 +34,10 @@ export default class TvShow extends React.Component {
   render() {
     const { tvShow, showEpisodes } = this.state;
     return (
-      <React.Component>
+      <React.Fragment>
         <Search />
         <div className="content">
-          {this.state.tvShow !== {} && (
+          {this.state.tvShow && (
             <React.Fragment>
               <div className="show-pictures">
                 <figure>
@@ -138,7 +138,7 @@ export default class TvShow extends React.Component {
             </React.Fragment>
           )}
         </div>
-      </React.Component>
+      </React.Fragment>
     );
   }
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import "./SASS/header.scss";
+import { Link } from "react-router-dom";
 
 export default class Header extends React.Component {
   constructor(props) {
@@ -24,14 +25,17 @@ export default class Header extends React.Component {
     return (
       <React.Fragment>
         <div className="header">
-          <div className="logo-container">
-            <h1>To Watch</h1>
-          </div>
+          <Link className="link" to="/">
+            <div className="logo-container">
+              <h1>To Watch</h1>
+            </div>
+          </Link>
 
           <div className="search-bar">
             <input
               type="text"
               className="bar"
+              id="bar"
               onChange={this.handleChange}
               value={this.state.searchBar}
               placeholder="Find me..."
